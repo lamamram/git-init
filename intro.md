@@ -7,3 +7,5 @@
 1. division rationnelle (scientisme) du travail
 2. verticalité
 3. inifinitudes des ressources
+
+### mise en question de ce modèle
