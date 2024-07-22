@@ -1,0 +1,9 @@
+# artefacts liés au projet à ignorer
+builds/
+# *.jar
+# builds/**/*.jar
+# exception à une règle précédente / restauration
+# !builds/*.jar
+
+## config individuelle non liée au projet => à envoyer dans ~/.gitignorer
+# .vscode/

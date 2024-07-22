@@ -1,0 +1,5 @@
+# histoire de l'agilité
+
+## évolution du cycle de  développement 
+
+1. depuis même les balbutiements du taylorisme (chaînes de production) et / ou ouvrages d'art importants  (ponts centrales) 1930 => premières études du développement **itératif** montée en version
