@@ -1,6 +1,7 @@
 # artefacts liés au projet à ignorer
 builds/
 target/
+.vagrant/
 # *.jar
 # builds/**/*.jar
 # exception à une règle précédente / restauration
