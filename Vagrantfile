@@ -1,6 +1,6 @@
 Vagrant.configure(2) do |config|
     [
-        ["git.myusine.fr", "2048", "2", "debian/wormbook64"],
+        ["git.myusine.fr", "2048", "2", "debian/bookworm64"],
     ].each do |vmname,mem,cpu,os|
         config.vm.define "#{vmname}" do |machine|
 
