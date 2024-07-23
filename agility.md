@@ -5,3 +5,5 @@
 1. depuis même les balbutiements du taylorisme (chaînes de production) et / ou ouvrages d'art importants  (ponts centrales) 1930 => premières études du développement **itératif** montée en version
 
 2. 1 ère méthode agile (rétrospectivement) EVO: 1976 => notions de développements cours et fixes
+
+3. ajout de la flexibilité et équipes multidisciplinaires => SCRUM (mélée) 1986 
