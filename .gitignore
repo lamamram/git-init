@@ -1,5 +1,6 @@
 # artefacts liés au projet à ignorer
 builds/
+target/
 # *.jar
 # builds/**/*.jar
 # exception à une règle précédente / restauration
