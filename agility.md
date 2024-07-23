@@ -6,4 +6,6 @@
 
 2. 1 ère méthode agile (rétrospectivement) EVO: 1976 => notions de développements cours et fixes
 
-3. ajout de la flexibilité et équipes multidisciplinaires => SCRUM (mélée) 1986 
+3. ajout de la flexibilité et équipes multidisciplinaires => SCRUM (mélée) 1986
+
+4. notion de développement **incrémental** (lots fonctionnels) : méthode RAD 1991
