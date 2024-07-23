@@ -9,3 +9,7 @@
 3. inifinitudes des ressources
 
 ### mise en question de ce modèle
+
+1. accélération des échanges d'informations
+2. compléxité des systêmes
+3. la dématérialisation  ( produit  => services)
