@@ -8,6 +8,8 @@
 2. verticalité
 3. inifinitudes des ressources
 
+> modèle standard : modèle waterfall (en cascade)
+
 ### mise en question de ce modèle
 
 1. accélération des échanges d'informations
