@@ -9,3 +9,5 @@
 3. ajout de la flexibilité et équipes multidisciplinaires => SCRUM (mélée) 1986
 
 4. notion de développement **incrémental** (lots fonctionnels) : méthode RAD 1991
+
+5. Manifeste Agile 2000 : officialisation et fixation des concepts (17 ingé) 
