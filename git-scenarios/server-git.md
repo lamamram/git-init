@@ -1,5 +1,7 @@
 # installer un dépôt git côté server
 
+## se connecter sur un serveur (VM VirtualBox)
+
 ## créer un utilisateur git
 
 1. `sudo useradd -m -U -s /bin/bash git`
