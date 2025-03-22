@@ -2,7 +2,10 @@
 
 ## setup
 
+> copier le dossier "commits-mgnt" en dehors du dépôt local courant
+
 ```bash
+git init
 git add .
 git commit -m "root-commit"
 ```
