@@ -83,13 +83,13 @@ git add . && git commit -m "bad content"
 tree=$(git cat-file -p HEAD | grep -Po "tree \K.*")
 blob=$(git ls-tree -r $tree | grep -P "\tcontent\.txt$" | awk '{print $3}')
 ll ".git/objects/${blob:0:2}/${blob:2:${#blob}}" | awk '{print $5}'
-## 38 (octets)
+## 28 (octets)
 
 ## previous blob of content.txt
 tree=$(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
 blob=$(git ls-tree -r $tree | grep -P "\tcontent\.txt$" | awk '{print $3}')
 ll ".git/objects/${blob:0:2}/${blob:2:${#blob}}" | awk '{print $5}'
-## 31 (octets)
+## 26 (octets)
 ```
 
 ### effet réél du git rm
@@ -104,6 +104,12 @@ git ls-tree -r $tree
 
 > le fichier bad_content.txt a disparu du nouveau commit
 > mais pas du commit précédent !
+
+```bash
+tree=$(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
+git ls-tree -r $tree
+```
+
 > on pourrait le restaurer avec `git checkout HEAD~1 -- bad_content.txt`
 > dans ce cas, faites attention au statut du fichier restaurer :
 > ajouté dans l'index par défaut
