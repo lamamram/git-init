@@ -1,5 +1,7 @@
 # cas d'utilisations de revert
 
+> copier le dossier "reverts" en dehors du dépôt local courant
+
 ## setup
 
 ```bash
