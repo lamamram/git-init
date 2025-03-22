@@ -26,7 +26,7 @@ git cat-file -p $last_commit
 ## nouveau commit
 
 ```bash
-cp base.txt content.txt
+echo "a content" > content.txt
 git add . && git commit -m "add content.txt"
 ```
 
@@ -67,9 +67,9 @@ git ls-tree -r $(git cat-file -p HEAD | grep -Po "tree \K.*")
 
 ## troisième commit (git rm)
 
-```
-cp base2.txt content.txt
-cp base3.txt bad_content.txt
+```bash
+echo "2nd content" > content.txt
+echo "bad content" > bad_content.txt
 git add . && git commit -m "bad content"
 ```
 
