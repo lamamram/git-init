@@ -1,21 +1,37 @@
 #!/bin/bash
 
+## procédure à exécuter avec précaution !!!!!
+
 NEW_ROOT_COMMIT=$1
 BRANCH_TO_CUT=$2
 
+## créer et basculer sur une branche orpheline 
+# orpheline == sans commit de base
+#  à partir commit en paramètre
 git checkout --orphan tmp_branch $NEW_ROOT_COMMIT
-## for this new branch almost everything new
+
+## créer le commit de base à partir de l'état de la copie de travail  
 git add . && git commit -m "root-commit"
-# get the new commits
+
+## rapatrier les commits le plus récents de la branche à couper
 git merge --ff $2
-## WARNING : BACKUP !!!
+
+## ICI FAIRE UN BACKUP DE LA BRANCHE A COUPER AU CAS OU
+## suppression de la branche à couper
 git branch -D $2
-## renaming the new branch with the same name of the cut branch
+
+## renommer la branche orpheline selon la branche qu'on a coupé
 git branch -m $2
-## overwrite remote history
+
+## écraser la branche distante pour synchroniser les historiques
 git push -f origin $2
-## DESTROY git objects that has no link with the new branch
+
+## la branche à couper est maintenant supprimée
+## mais les commits sont toujours présents dans le dépôt
+## SUPPRESSION PHYSIQUE DES COMMITS
 git gc --aggressive --prune=all
-## even for the reflog
+
+## mettre à jour le reflog
 git reflog expire --all --expire=now
+
 ## THAT'S FOLKS !!!
