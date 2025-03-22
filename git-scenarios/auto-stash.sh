@@ -1,4 +1,7 @@
 #!/bin/bash
+# à placer dans un alias linux
+# alias gsw='/path/to/auto-stash.sh'
+# __git_complete gsw _git_switch
 
 check_index(){
   git stash list | grep -Po "\K[0-9]+\}.+tmp-stash-$1$" | awk -F '}' '{ print $1  }'
