@@ -172,6 +172,9 @@ git status
 > il y a donc 2 types de modifications de la copie de travail
 > **Untracked:** modification sur un fichier inconnu du dépôt
 > **Modified:** modification sur un fichier déjà commité au - 1x
+> quand vous avez l'habitude de `git status`
+> `git config --global alias.st status`
+> `git st` remplace `git status`
 
 ---
 
@@ -220,6 +223,10 @@ done
 # ajouter demo_1 jusqu'à jusqu'à 10 avec git add -i
 git commit -m "ajout 10 démos"
 ```
+
+> quand vous avez l'habitude de `git commit`
+> `git config --global alias.ci commit`
+> `git ci` remplace `git commit`
 
 ---
 
