@@ -6,8 +6,8 @@
 
 ```bash
 git init
-git add .
-git commit -m "root-commit"
+git add . && git commit -m "root-commit"
+
 ```
 
 ## voir le contenu de l'objet commit
@@ -16,6 +16,7 @@ git commit -m "root-commit"
 # commit le + récent dans tout le dépôt
 last_commit=$(git rev-list --all -1)
 git cat-file -p $last_commit
+
 ```
 
 * décrit les métadonnées nécessaires à un commit
@@ -31,6 +32,7 @@ git cat-file -p $last_commit
 ```bash
 echo "a content" > content.txt
 git add . && git commit -m "add content.txt"
+
 ```
 
 ### voir le commit
@@ -74,6 +76,7 @@ git ls-tree -r $(git cat-file -p HEAD | grep -Po "tree \K.*")
 echo "2nd content" > content.txt
 echo "bad content" > bad_content.txt
 git add . && git commit -m "bad content"
+
 ```
 
 ### comparaison des poids des blobs de content.txt
@@ -83,35 +86,13 @@ git add . && git commit -m "bad content"
 tree=$(git cat-file -p HEAD | grep -Po "tree \K.*")
 blob=$(git ls-tree -r $tree | grep -P "\tcontent\.txt$" | awk '{print $3}')
 ll ".git/objects/${blob:0:2}/${blob:2:${#blob}}" | awk '{print $5}'
+
 ## 28 (octets)
 
 ## previous blob of content.txt
 tree=$(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
 blob=$(git ls-tree -r $tree | grep -P "\tcontent\.txt$" | awk '{print $3}')
 ll ".git/objects/${blob:0:2}/${blob:2:${#blob}}" | awk '{print $5}'
+
 ## 26 (octets)
 ```
-
-### effet réél du git rm
-
-```bash
-git rm bad_content.txt
-git commit -m "delete bas_content"
-##
-tree=$(git cat-file -p HEAD | grep -Po "tree \K.*")
-git ls-tree -r $tree
-```
-
-> le fichier bad_content.txt a disparu du nouveau commit
-> mais pas du commit précédent !
-
-```bash
-tree=$(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
-git ls-tree -r $tree
-```
-
-> on pourrait le restaurer avec `git checkout HEAD~1 -- bad_content.txt`
-> dans ce cas, faites attention au statut du fichier restaurer :
-> ajouté dans l'index par défaut
-
-

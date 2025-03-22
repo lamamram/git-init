@@ -184,6 +184,7 @@ git status
 git add content.txt
 git add new_file.txt
 git README.md
+
 # MIEUX
 git add content.txt new_file.txt README.md
 # TOUTES les modifications mais voulions nous vraiment tout ajouter ?
@@ -220,6 +221,7 @@ git commit -m "ajout 4 fichiers"
 for index in $(seq 2 5); do
   echo -e "\nother_$index\n" >> "demo_$index.txt"
 done
+
 # ajouter demo_1 jusqu'à jusqu'à 10 avec git add -i
 git commit -m "ajout 10 démos"
 ```

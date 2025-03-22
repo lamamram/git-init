@@ -8,6 +8,7 @@
 git init
 echo "content" > content.txt
 git add . && git commit -m "root-commit"
+
 ```
 ---
 
@@ -18,6 +19,7 @@ git add . && git commit -m "root-commit"
 ```bash
 echo -e "\n2nd_content\n" >> content.txt
 git add content.txt && git commit -m "2nd content"
+
 ```
 
 ---
@@ -51,6 +53,7 @@ git add content.txt && git commit -m "3rd content"
 
 echo -e "\n4th_content\n" >> content.txt
 git add content.txt && git commit -m "4th content"
+
 ```
 
 ---
@@ -104,6 +107,7 @@ content
 4th_content
 
 EOF
+
 ```
   + `git add . && git revert --continue --no-edit`
 
@@ -133,6 +137,7 @@ git add content.txt && git commit -m "6th content"
 
 echo -e "\n7th_content\n" >> content.txt
 git add content.txt && git commit -m "7th content"
+
 ```
 ---
 
@@ -157,6 +162,7 @@ content
 7th_content
 
 EOF
+
 git add content.txt && git revert --continue
 ```
 

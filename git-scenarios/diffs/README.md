@@ -72,6 +72,7 @@ line13
 line14
 line15
 EOF
+
 ```
 
 3. voir le **nb MINIMUM de lignes** entre deux modifs constituant deux hunks :
@@ -93,6 +94,7 @@ line13_bis
 line14
 line15
 EOF
+
 ```
 ---
 

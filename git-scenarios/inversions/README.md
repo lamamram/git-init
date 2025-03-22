@@ -28,6 +28,7 @@ function2_2(){
 }
 EOF
 git add . && git commit -m "ajout script2.txt"
+
 ```
 
 ## supprimer les modifications de la copie de travail
@@ -58,6 +59,7 @@ weird_function(){
   weird
 }
 EOF
+
 ```
 
 ---
@@ -75,6 +77,7 @@ function2_e2(){
   return
 }erg
 EOF
+
 ```
 ---
 
@@ -120,6 +123,7 @@ function1_1(){
   return
 }
 EOF
+
 git checkout -- script1.txt
 ```
 
@@ -143,6 +147,7 @@ function2_2(){
   return
 }
 EOF
+
 git add script2.txt
 ## inversion de l'ajout
 git reset -- script2.txt
@@ -173,6 +178,7 @@ deprecated_function(){
 }
 EOF
 git add . && git commit -m "ajout wrong_script.txt"
+
 ```
 
 ---
@@ -223,6 +229,40 @@ git reset -- wrong_script.txt
 
 ---
 
+### supprimer dans le dépôt mais laisser intact en copie de travail
+
+* usage: un fichier commité MAIS qui aurait dû être ignoré !!!
+* pour des *configs. non lié au projet* (éditeur)
+* pour les **artifacts**, tout fichier/dossier généré lors
+  + compilation
+  + exécution
+  + tests
+
+```bash
+mkdir .vscode
+cat <<EOF > .vscode/settings.json
+{
+  "tabSize": 4
+}
+EOF
+git add . && git commit -m "commit utile au projet mais ajoutant des configs inutiles"
+```
+
+---
+
+### seulement suppression au dépôt
+
+```bash
+# -r: pour un dossier
+# --cached: laisser intacte la copie de travail
+git rm -r --cached .vscode
+# ajout du .vscode dans le .gitignore
+echo ".vscode/" > .gitignore
+git add .gitignore && commit -m "suppression de .vscode"
+```
+
+---
+
 ### renommer/déplacer un fichier dans la copie ET dans le dépôt
 
 * même mécasnisme qu'avec `git rm`
@@ -236,14 +276,11 @@ valid_function(){
 }
 EOF
 git add . && git commit -m "rehabilitation de wrong_script.txt"
+
+# renommage
 git mv wrong_script.txt valid_script.txt
 
 # observer le statut particulier
 git status
 git commit -m "renommage du wrong_script.txt en valid_script.txt"
 ```
-
----
-
-
-
