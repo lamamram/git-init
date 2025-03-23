@@ -36,9 +36,9 @@ git branch -v
 ```bash
 # avant de créer un nouveau dépôt (cf infra)
 git config --global init.defaultBranch main
-# au moment de la création d'un nouveau dépôt
+# OU au moment de la création d'un nouveau dépôt
 git init --initial-branch=main
-# après la création mais avant de pousser sur un dépôt distant
+# OU après la création mais avant de pousser sur un dépôt distant
 git branch -m main
 ```
 
@@ -91,7 +91,7 @@ git config --global --unset <section>.<key>
 * git peut demander des saisies de données depuis un éditeur
 * principalement pour le **message de commit**
 * avec *Git-Bash* l'éditeur par défaut est **vim** qui peut être
-* considéré conte-intuitif par des utilisateurs *windows*
+* considéré commme conte-intuitif par des utilisateurs *windows*
 
 * `git config --global core.editor notepad`
 
@@ -150,8 +150,8 @@ git commit -m "ajout du fichier content.txt au dépôt"
 git status
 ```
 
-> avec la commande `git commit`, qui réalise l'**action COMMIT**
-> le fichier, avec tout son contenu, a été copié dans le dépôt .git
+> avec la commande `git commit`, qui réalise l'**action COMMIT**,
+> le fichier, avec tout son contenu, a été copié dans le dépôt `.git`
 > en tant qu'**objet COMMIT** == **VERSION**
 
 > les contenus du fichier en copie de travail et dans le dépôt sont identiques
@@ -162,6 +162,8 @@ git status
 ### autre fichier + nouvelle modification sur le fichier existant
 
 ```bash
+# création du fichier new_file.txt
+# ET ajouter 3 lignes dans content.txt 
 echo "new_file" > new_file.txt
 echo -e "\nnew content\n" >> content.txt
 
@@ -210,7 +212,7 @@ git commit -m "ajout new_file.txt + nouveau contenu dans content.txt"
 #### démo git add -i
 
 ```bash
-# scénario
+# scénario: copier et coller dans git-bash
 for index in $(seq 1 15); do
   echo "content_$index" > "demo_$index.txt"
 done
@@ -222,7 +224,11 @@ for index in $(seq 2 5); do
   echo -e "\nother_$index\n" >> "demo_$index.txt"
 done
 
-# ajouter demo_1 jusqu'à jusqu'à 10 avec git add -i
+# observer la copie de travail
+git status
+
+# ajouter demo_1 jusqu'à jusqu'à demo_10 avec git add -i
+# ?????
 git commit -m "ajout 10 démos"
 ```
 

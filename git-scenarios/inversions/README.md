@@ -3,6 +3,7 @@
 > copier le dossier "inversions" en dehors du dépôt local courant
 
 ```bash
+# copier et coller toutes les lignes de bash dans git-bash
 git init
 cat <<EOF > script1.txt
 function1_1(){
@@ -86,6 +87,7 @@ EOF
 ```bash
 # observer les diffs
 git diff HEAD
+# enlever les modifications indûes
 git checkout -- script*.txt
 ```
 
@@ -203,12 +205,12 @@ git commit -m "suppression wrong_script.txt"
 
 ```bash
 # voir les fichiers que le commit courant connait
-# ON NE VERRA PLUS DANS LE COMMIT ET LES PROCHAINS 
+# ON NE LE VERRA PLUS DANS LE COMMIT ET LES PROCHAINS 
 git ls-tree -r $(git cat-file -p HEAD | grep -Po "tree \K.*")
 
 # voir les fichiers que le commit précédent connait
 # avant le git rm
-# IL EST TOUJOURS LA
+# MAIS IL EST TOUJOURS LA
 git ls-tree -r $(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
 ```
 
@@ -216,7 +218,7 @@ git ls-tree -r $(git cat-file -p HEAD~1 | grep -Po "tree \K.*")
 
 ### inverser un git rm
 
-* si le fichier est dans le commit précédent
+* si le fichier supprimé est dans le commit précédent
 * je peux renvoyer ce fichier **depuis ce commit dans la copie de travail**
 
 ```bash
