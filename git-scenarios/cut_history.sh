@@ -5,6 +5,7 @@
 NEW_ROOT_COMMIT=$1
 BRANCH_TO_CUT=$2
 
+
 ## créer et basculer sur une branche orpheline 
 # orpheline == sans commit de base
 #  à partir commit en paramètre
