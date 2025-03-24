@@ -4,6 +4,7 @@
 # /.vagrant/
 infos.txt
 debug.log
+
 ## exception à une règle précédente SAUF règle de type "dossier"
 # !target/debug.log
 # !.vagrant/debug.log
