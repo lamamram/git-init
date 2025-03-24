@@ -4,6 +4,7 @@
 # alias gsw='/path/to/auto-stash.sh'
 # __git_complete gsw _git_switch
 
+
 # retourne de l'index du stash en fonction d'un message
 check_index(){
   git stash list | grep -Po "\K[0-9]+\}.+tmp-stash-$1$" | awk -F '}' '{ print $1  }'
